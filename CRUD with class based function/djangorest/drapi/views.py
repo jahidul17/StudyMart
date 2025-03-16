@@ -1,34 +1,10 @@
-"""
 from django.shortcuts import render
 from .models import Aiquest
 from .serializer import AiquestSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-"""
-from .models import Aiquest
-from .serializer import AiquestSerializer
-from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import ListModelMixin,CreateModelMixin
 
 
-class AiquestList(GenericAPIView,ListModelMixin):
-    queryset=Aiquest.objects.all()
-    serializer_class=AiquestSerializer
-    
-    def get(self,request,*args, **kwargs):
-        return self.list(request,*args,**kwargs)
-    
-
-class AiquestCreate(GenericAPIView,CreateModelMixin):
-    queryset=Aiquest.objects.all()
-    serializer_class=AiquestSerializer
-    
-    def post(self,request,*args, **kwargs):
-        return self.create(request,*args,**kwargs)
-
-
-
-"""
 class AiquestCreate(APIView):  
     def get(self,request,pk=None,format=None):
         id=pk
@@ -77,4 +53,4 @@ class AiquestCreate(APIView):
         ai=Aiquest.objects.get(pk=id)
         ai.delete()
         return Response({'msg':'Successfully deleted data'})
-"""        
+        
