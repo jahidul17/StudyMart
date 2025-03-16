@@ -8,6 +8,7 @@ data={
     'course_name':'Machine Learning',
     'course_duration':2,
     'seat':25,
+    
 }
 
 json_data = json.dumps(data)
