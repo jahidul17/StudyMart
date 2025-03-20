@@ -21,9 +21,19 @@ from drapi import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-
+    
+    # path('ailist/',views.AiquestList.as_view(),name='ailist'),
+    # path('aiquestcreate/',views.AiquestCreate.as_view(),name='aiquestcreate'),
     path('aiquest_list_create/',views.Aiquest_List_Create.as_view(),name='aiquest_list_create'),
+     
+    
+    # path('aiquestretrive/<int:pk>',views.AiquestRetrive.as_view(),name='aiquestretrive'),
+    # path('aiquestupdate/<int:pk>',views.AiquestUpdate.as_view(),name='aiquestupdate'),
+    # path('aiquestdelete/<int:pk>',views.AiquestDestroy.as_view(),name='aiquestdelete'),
     
     path('aiquest_retrive_update_destroy/<int:pk>',views.Aiquest_Retrive_Update_Destroy.as_view(),name='aiquest_retrive_update_destroy'),
     
+    
+    # path('aicreate/',views.AiquestCreate.as_view(),name='aicreate'),
+    # path('aicreate/<int:pk>',views.AiquestCreate.as_view(),name='aicreate'),
 ]
