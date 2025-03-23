@@ -7,14 +7,16 @@ from rest_framework.response import Response
 """
 from .models import Aiquest
 from .serializer import AiquestSerializer
-from rest_framework import viewsets
+from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
 
-class Aiquest_Model_View_Set(viewsets.ModelViewSet):
-    #List, Create, Delete, Update, Partial Update
+class Aiquest_List_Create(ListCreateAPIView):
     queryset=Aiquest.objects.all()
     serializer_class=AiquestSerializer
     
-
+    
+class Aiquest_Retrive_Update_Destroy(RetrieveUpdateDestroyAPIView):
+    queryset=Aiquest.objects.all()
+    serializer_class=AiquestSerializer
     
     
     
